@@ -11,7 +11,7 @@ import org.springframework.stereotype.Service;
 import org.thymeleaf.spring6.SpringTemplateEngine;
 import java.security.SecureRandom;
 
-import static com.hasanalmunawr.ImplemetationSpringBootEmailSender.utils.EmailUtil.getMessageEmail;
+import static com.hasanalmunawr.ImplemetationSpringBootEmailSender.utils.EmailUtil.emailMessage;
 
 @Service
 @Slf4j
@@ -33,7 +33,7 @@ public class EmailService {
 
         try {
             String code = generateActivationCode(6);
-            String htmlContent = getMessageEmail(username, code, confirmationUrl);
+            String htmlContent = emailMessage(username, code, confirmationUrl);
             MimeMessage message = mailSender.createMimeMessage();
 
             message.setFrom(senderEmail);
