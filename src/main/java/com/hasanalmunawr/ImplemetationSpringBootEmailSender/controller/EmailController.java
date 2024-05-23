@@ -16,7 +16,7 @@ public class EmailController {
 
     String username = "hasan Almunawr";
     String email = "hasanalmunawar9@gmail.com";
-    String link = "https://ibox.co.id/product/macbook-pro-m2-14-inci-2023-ib";
+    String link = "";
 
 
     @PostMapping

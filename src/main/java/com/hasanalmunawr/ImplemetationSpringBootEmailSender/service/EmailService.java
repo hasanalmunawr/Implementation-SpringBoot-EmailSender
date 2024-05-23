@@ -1,23 +1,15 @@
 package com.hasanalmunawr.ImplemetationSpringBootEmailSender.service;
 
 import jakarta.mail.MessagingException;
-import jakarta.mail.internet.InternetAddress;
+
 import jakarta.mail.internet.MimeMessage;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.mail.MailException;
-import org.springframework.mail.SimpleMailMessage;
 import org.springframework.mail.javamail.JavaMailSender;
-import org.springframework.mail.javamail.MimeMessageHelper;
 import org.springframework.stereotype.Service;
-import org.thymeleaf.context.Context;
 import org.thymeleaf.spring6.SpringTemplateEngine;
-
-import java.nio.charset.StandardCharsets;
 import java.security.SecureRandom;
-import java.util.HashMap;
-import java.util.Map;
 
 import static com.hasanalmunawr.ImplemetationSpringBootEmailSender.utils.EmailUtil.getMessageEmail;
 
@@ -46,7 +38,7 @@ public class EmailService {
 
             message.setFrom(senderEmail);
             message.setRecipients(MimeMessage.RecipientType.TO, recipientEmail);
-            message.setSubject("Your Subject Here"); // Set your email subject here
+            message.setSubject("Account Activation"); // Set your email subject here
             message.setContent(htmlContent, "text/html; charset=utf-8");
             mailSender.send(message);
 
